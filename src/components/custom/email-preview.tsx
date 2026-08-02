@@ -105,7 +105,7 @@ function PreviewBlock({ block }: { block: BlockInstance }) {
           >
             {(p.title as string) || "Company Name"}
           </div>
-          {p.subtitle && (
+          {Boolean(p.subtitle) && (
             <div className="mt-1 text-sm" style={{ color: "#71717a" }}>
               {p.subtitle as string}
             </div>

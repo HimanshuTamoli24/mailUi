@@ -162,6 +162,7 @@ function ToolbarAction({
 
 function BlockPreview({ block }: { block: BlockInstance }) {
   const p = block.props
+  const definition = getBlockDefinition(block.type)
 
   switch (block.type) {
     case "header":
@@ -182,7 +183,7 @@ function BlockPreview({ block }: { block: BlockInstance }) {
           >
             {(p.title as string) || "Company Name"}
           </div>
-          {p.subtitle && (
+          {Boolean(p.subtitle) && (
             <div
               className="mt-1 text-sm"
               style={{ color: (p.textColor as string) ?? "#71717a" }}
